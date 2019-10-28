@@ -1,12 +1,24 @@
 package main
 
 import (
-	f "practice1/funcArr"
+	"fmt"
+	"os"
+	f "practice1/funcarr"
 )
 
 func main() {
-	size := 11
-	arr := f.CreateMass("x", size)
-	f.ChangeMass("-", arr, size)
+	var size int
+	var item string
+	var diagitem string
+
+	fmt.Print("Введите размер массива: ")
+	fmt.Fscan(os.Stdin, &size)
+	fmt.Print("Введите символ заполнения: ")
+	fmt.Fscan(os.Stdin, &item)
+	fmt.Print("Введите символ диагонали: ")
+	fmt.Fscan(os.Stdin, &diagitem)
+
+	arr := f.CreateMass(item, size)
+	f.ChangeMass(diagitem, arr, size)
 	f.PrintMass(size, arr)
 }
