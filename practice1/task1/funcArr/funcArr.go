@@ -3,14 +3,10 @@ package funcarr
 import "fmt"
 
 // ChangeMass change array.
-func ChangeMass(item string, arr [][]string, size int) {
-	var count = 0
-	var count2 = size - 1
-	for i := 0; i < size; i++ {
-		arr[i][count] = item
-		arr[i][count2] = item
-		count++
-		count2--
+func ChangeMass(item string, arr [][]string) {
+	for i := 0; i < len(arr); i++ {
+		arr[i][i] = item
+		arr[i][len(arr)-1-i] = item
 	}
 }
 
@@ -27,8 +23,8 @@ func CreateMass(item string, size int) [][]string {
 }
 
 // PrintMass writes array to console.
-func PrintMass(size int, arr [][]string) {
-	for i := 0; i < size; i++ {
+func PrintMass(arr [][]string) {
+	for i := 0; i < len(arr); i++ {
 		fmt.Println(arr[i])
 	}
 }

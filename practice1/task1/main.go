@@ -19,6 +19,6 @@ func main() {
 	fmt.Fscan(os.Stdin, &diagitem)
 
 	arr := f.CreateMass(item, size)
-	f.ChangeMass(diagitem, arr, size)
-	f.PrintMass(size, arr)
+	f.ChangeMass(diagitem, arr)
+	f.PrintMass(arr)
 }
